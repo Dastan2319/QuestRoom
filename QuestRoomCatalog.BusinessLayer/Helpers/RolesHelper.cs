@@ -9,25 +9,23 @@ using System.Threading.Tasks;
 
 namespace QuestRoomCatalog.BusinessLayer.Helpers
 {
-    public class QuestLogosHelper : ICrud<QuestsLogosBO>
+
+    public class RolesHelper : ICrud<RolesBO>
     {
         UnitOfWork Db { get; set; }
 
-        public QuestLogosHelper(UnitOfWork uow)
+        public RolesHelper(UnitOfWork uow)
         {
             Db = uow;
         }
-
-        public void Create(QuestsLogosBO Bo)
+        public void Create(RolesBO Bo)
         {
-            if(Bo.Id == 0)
+            if (Bo.Id == 0)
             {
-                QuestsLogos questLogos = AutoMapper<QuestsLogosBO, QuestsLogos>.Map(Bo);
-                Db.QuestsLogosUowRepository.Add(questLogos);
+                Roles roles = AutoMapper<RolesBO, Roles>.Map(Bo);
+                Db.RolesUowRepository.Add(roles);
                 Db.Save();
             }
-
         }
-
     }
 }

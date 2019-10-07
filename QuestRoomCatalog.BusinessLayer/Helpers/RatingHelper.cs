@@ -9,25 +9,22 @@ using System.Threading.Tasks;
 
 namespace QuestRoomCatalog.BusinessLayer.Helpers
 {
-    public class QuestLogosHelper : ICrud<QuestsLogosBO>
+    public class RatingHelper : ICrud<RatingBO>
     {
         UnitOfWork Db { get; set; }
 
-        public QuestLogosHelper(UnitOfWork uow)
+        public RatingHelper(UnitOfWork uow)
         {
             Db = uow;
         }
-
-        public void Create(QuestsLogosBO Bo)
+        public void Create(RatingBO Bo)
         {
-            if(Bo.Id == 0)
+            if (Bo.Id == 0)
             {
-                QuestsLogos questLogos = AutoMapper<QuestsLogosBO, QuestsLogos>.Map(Bo);
-                Db.QuestsLogosUowRepository.Add(questLogos);
+                Rating rating = AutoMapper<RatingBO, Rating>.Map(Bo);
+                Db.RatingUowRepository.Add(rating);
                 Db.Save();
             }
-
         }
-
     }
 }

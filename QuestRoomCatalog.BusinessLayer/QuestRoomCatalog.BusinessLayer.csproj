@@ -56,7 +56,13 @@
     <Compile Include="BusinessObjects\UsersBO.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="AutoMapper.cs" />
+    <Compile Include="Helpers\ICrud.cs" />
+    <Compile Include="Helpers\NinjectUnitOfWork.cs" />
     <Compile Include="Helpers\QuestLogosHelper.cs" />
+    <Compile Include="Helpers\QuestsRoomsHelper.cs" />
+    <Compile Include="Helpers\RatingHelper.cs" />
+    <Compile Include="Helpers\RolesHelper.cs" />
+    <Compile Include="Helpers\UsersHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
